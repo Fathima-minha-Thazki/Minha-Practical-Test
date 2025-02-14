@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# Appointment Booking System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an **Appointment Booking System** consisting of a **backend** and **frontend**.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Make sure you have the following installed on your system:
+- **Node.js** (latest version)
+- **MySQL** (for the database)
+- **Git** (to clone the repository)
+- **VS Code** (or any other text editor)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Clone the Repository
+Clone this repository to your local machine by running the following command in your terminal:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+git clone https://github.com/Fathima-minha-Thazki/Minha-Practical-Test.git 
+```
 
-### `npm test`
+### 2. Navigate to the Project Folder
+Once the repo is cloned, navigate into the project folder:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+cd Minha-Practical-Test
+```
 
-### `npm run build`
+Open the project in VS Code:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+code .
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Set Up Backend
+1. Open a new terminal and navigate to the backend directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd backend
+```
+2. Install Dependencies:
+Run the following command to install the necessary packages:
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Configure .env File:
+Open the .env file in the backend directory.
+Change the MySQL password in the DB_PASSWORD variable to match your local MySQL database password.
+Example:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=appointments
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Create Database:
+Make sure you have MySQL installed and running. Open MySQL Workbench or use the command line to create a database:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+CREATE DATABASE appointments;
+```
 
-## Learn More
+You don’t need to create the tables manually, as they will be automatically created by Sequelize (if you have set up your models correctly).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Run the Backend:
+In the terminal, run the following command to start the backend server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+node server.js
+```
+The backend should now be running on http://localhost:5000.
 
-### Code Splitting
+### 4. Set Up Frontend
+1. Open another terminal and navigate to the frontend directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+cd frontend
+```
 
-### Analyzing the Bundle Size
+2. Install Dependencies:
+Run the following command to install the necessary packages for the frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm install
+```
 
-### Making a Progressive Web App
+3. Run the Frontend:
+To start the frontend server, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm start
+```
 
-### Advanced Configuration
+This will start the React app on http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Troubleshooting
+If the backend server doesn’t start:
 
-### Deployment
+Make sure you have MySQL running and the database is created.
+Double-check the .env file for correct MySQL credentials.
+If you encounter issues with the frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Ensure that you have installed all dependencies by running npm install in the frontend directory.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Conclusion
+You should now have both the backend and frontend running locally.
+Backend is accessible at http://localhost:5000, and Frontend at http://localhost:3000.
